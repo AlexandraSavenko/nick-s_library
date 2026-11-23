@@ -1,0 +1,35 @@
+.imageCard {
+  width: 250px;
+  aspect-ratio: 1 / 1;
+
+  background: var(--bg-surface);
+  padding: 1rem;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+.imageCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+.image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+  background: var(--bg-main);
+  border-radius: 12px;
+  padding: 0.5rem;
+  display: block;
+}
+
+.correct {
+  border: 4px solid green;
+}
+
+.wrong {
+  border: 4px solid red;
+}
