@@ -6,7 +6,6 @@ import { readings } from '../../reading';
 
 export default function ReadingList() {
    const { taskId } = useParams();
-   console.log(taskId)
   const reading = readings.find((l) => l.title === taskId);
     const [answers, setAnswers] = useState({});
       const handleAnswer = (taskId, imageId) => {
@@ -16,6 +15,7 @@ export default function ReadingList() {
         }));
       };
   return (
+    <div>
     <ul className={css.ul}>
         {reading.task1.map((el) => (
           <li className={css.li} key={el.id}>
@@ -51,5 +51,20 @@ export default function ReadingList() {
           </li>
         ))}
       </ul>
+      <ul className={css.gameBox}>
+        {reading.game.map((game, index) => (
+          <li key={index}>
+            <iframe
+              src={game.url}
+              style={{ border: "0px", width: "100%", height: "500px" }}
+              allowfullscreen="true"
+              webkitallowfullscreen="true"
+              mozallowfullscreen="true"
+            ></iframe>
+            <a href={game.url} target="_blanc">{`game ${index + 1}`}</a>
+          </li>
+        ))}
+      </ul>
+      </div>
   )
 }
