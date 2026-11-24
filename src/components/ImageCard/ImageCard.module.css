@@ -1,5 +1,5 @@
 .imageCard {
-  width: 250px;
+  width: 450px;
   aspect-ratio: 1 / 1;
 
   background: var(--bg-surface);
@@ -10,6 +10,8 @@
 
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   position: relative;
+
+  cursor: pointer;
 }
 .imageCard:hover {
   transform: translateY(-3px);
